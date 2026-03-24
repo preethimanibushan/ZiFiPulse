@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZiFiPulse - Loan Dashboard</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>ZiFiPulse</h1>
+            <p>Loan Reporting Dashboard</p>
+        </header>
+        
+        <nav class="navbar">
+            <ul>
+                <li><a href="#dashboard" class="nav-link active">Dashboard</a></li>
+                <li><a href="#loans" class="nav-link">Loans</a></li>
+                <li><a href="#analytics" class="nav-link">Analytics</a></li>
+                <li><a href="#settings" class="nav-link">Settings</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <!-- Statistics Cards -->
+            <section id="statistics" class="statistics">
+                <div class="stat-card">
+                    <h3>Total Loans</h3>
+                    <p class="stat-value" id="totalLoans">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Amount</h3>
+                    <p class="stat-value" id="totalAmount">$0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Loan</h3>
+                    <p class="stat-value" id="averageLoan">$0</p>
+                </div>
+            </section>
+            
+            <!-- Loans Table -->
+            <section id="loans-section" class="loans-section">
+                <h2>Recent Loans</h2>
+                <div class="controls">
+                    <input type="text" id="searchInput" placeholder="Search by borrower name...">
+                    <select id="statusFilter">
+                        <option value="">All Status</option>
+                        <option value="approved">Approved</option>
+                        <option value="pending">Pending</option>
+                        <option value="funded">Funded</option>
+                    </select>
+                    <button id="syncButton" class="btn-primary">Sync Loans</button>
+                </div>
+                <table class="loans-table">
+                    <thead>
+                        <tr>
+                            <th>Borrower Name</th>
+                            <th>Loan Amount</th>
+                            <th>Status</th>
+                            <th>Type</th>
+                            <th>Interest Rate</th>
+                            <th>Term (months)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="loansTableBody">
+                        <!-- Loans will be populated here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    
+    <script src="scripts/app.js"></script>
+</body>
+</html>
